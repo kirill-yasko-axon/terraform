@@ -10,5 +10,6 @@ phases:
 
   build:
     commands:
+      - ./terraform init 
       - ./terraform plan
 
