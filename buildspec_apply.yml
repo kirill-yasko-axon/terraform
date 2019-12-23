@@ -5,6 +5,8 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
+      - apt-get update
+      - apt install wget 
       - wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
       - unzip terraform_0.11.11_linux_amd64.zip
       - ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
