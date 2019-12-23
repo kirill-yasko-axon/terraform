@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.7
+      python: 3.8
     commands:
       - curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux$
       - unzip -o terraform.zip
