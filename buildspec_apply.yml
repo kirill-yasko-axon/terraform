@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
-      - wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
+      - curl https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
       - unzip terraform_0.11.11_linux_amd64.zip
       - ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
       - echo ~/.ssh/id_rsa
