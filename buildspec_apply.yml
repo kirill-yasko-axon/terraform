@@ -10,8 +10,6 @@ phases:
       - chmod +x terraform
       - ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
       - echo ~/.ssh/id_rsa
-      - EXPORT  aws_access_key_id=AKIAUGOOIHIFWLV4YBCO
-      - EXPORT  aws_secret_access_key=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    
    
   build:
     commands:
