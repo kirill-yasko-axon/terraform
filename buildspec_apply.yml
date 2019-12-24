@@ -10,7 +10,8 @@ phases:
       - chmod +x terraform
       - ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
       - echo ~/.ssh/id_rsa
-
+      - echo $aws_access_key_id     
+   
   build:
     commands:
       - ./terraform init
