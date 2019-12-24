@@ -1,5 +1,6 @@
 # General AWS configuration
-variable "region" {}
+variable "region" {
+}    
 
 # EC2 Configuration
 #--------------------------------------------------------------#
