@@ -7,7 +7,7 @@ default = "eu-central-1"
 #--------------------------------------------------------------#
 
 variable "bucket_name" {
-default = "ziqy-staging"
+default = "kirilltestbucket1234"
 }
 
 #--------------------------------------------------------------#
@@ -36,7 +36,7 @@ default =  "sandbox"
 }
 
 variable "amazon_machine_image" {
-default =  "ami-02df9ea15c1778c9c"
+default =  "ami-0cc0a36f626a4fdf5"
 }
 
 variable "instance_type" {
@@ -56,10 +56,20 @@ default = "sandbox_eip"
 
 # Security group parameters
 variable "public_ports" {
-default = [80, 443]
+default = "[80, 443]"
 }
 
 variable "ssh_allowed_ips" { 
-default = ["0.0.0.0/0"]
+default = "[0.0.0.0/0]"
 }
 #--------------------------------------------------------------#
+
+variable "vpc_security_group_ids" {
+  description = "A list of security group IDs to associate with"
+  type        = list(string)
+  default     = null
+}
+
+variable "subnet_id" {
+default = "subnet-0268d13ee34bc742c"
+}
