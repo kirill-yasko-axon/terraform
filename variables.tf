@@ -7,7 +7,7 @@ default = "eu-central-1"
 #--------------------------------------------------------------#
 
 variable "bucket_name" {
-default = "kirilltestbucket1234"
+default = "ziqy-staging-s3-bucket"
 }
 
 #--------------------------------------------------------------#
@@ -17,7 +17,7 @@ default = "kirilltestbucket1234"
 # SSH
 
 variable "ssh_key_name" {   
-default = "sandbox-deploy-key"
+default = "sandbox-ziqy-key"
 }
  
 variable "public_key_path" {   
@@ -32,7 +32,7 @@ default = "~/.ssh/id_rsa"
 # Instance parameters
 
 variable "instance_name" {
-default =  "sandbox"
+default =  "ziqy-sandbox"
 }
 
 variable "amazon_machine_image" {
@@ -71,5 +71,15 @@ variable "vpc_security_group_ids" {
 }
 
 variable "subnet_id" {
-default = "subnet-0268d13ee34bc742c"
+default = "subnet-e2776f9f"
+}
+
+variable "vpc_id" {
+default = "vpc-c039c3aa"
+}
+
+variable "ingress_ports" {
+  type        = list(number)
+  description = "list of ingress ports"
+  default     = [80, 443]
 }

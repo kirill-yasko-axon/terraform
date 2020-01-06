@@ -17,7 +17,7 @@ resource "aws_instance" "ec2-instance" {
   }
 
   tags = {
-    name = var.instance_name
+    Name = var.instance_name
   }
 
 
@@ -49,3 +49,42 @@ resource "aws_eip" "elastic-ip" {
   network_interface = aws_instance.ec2-instance.primary_network_interface_id
 }
 
+resource "aws_security_group" "security-group" {
+  
+  name = "sandbox-security-group"
+  vpc_id      = var.vpc_id
+ 
+  dynamic "ingress" {
+    iterator = port
+    for_each = var.ingress_ports
+    
+    content {
+    from_port = port.value
+    to_port = port.value
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    }
+  }
+
+ 
+  ingress {
+
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["217.25.198.73/32"]
+
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+resource "aws_network_interface_sg_attachment" "sandbox-security-group" {
+  security_group_id    = aws_security_group.security-group.id
+  network_interface_id = aws_instance.ec2-instance.primary_network_interface_id
+}
