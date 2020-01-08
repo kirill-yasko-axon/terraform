@@ -83,3 +83,29 @@ variable "ingress_ports" {
   description = "list of ingress ports"
   default     = [80, 443]
 }
+
+# RDS Configuration
+#--------------------------------------------------------------#
+
+variable "rds_storage_size" {
+default =  20
+}
+variable "rds_max_storage_size" {
+default = 100
+}
+variable "rds_engine" {
+default = "postgres"
+}
+variable "rds_engine_version" {
+default = "11.5"
+}
+variable "rds_instance_class" {
+default = "db.t2.micro"
+}
+variable "rds_instance_name" {
+default = "sandbox"
+}
+variable "rds_default_username" {}
+variable "rds_default_password" {}
+#--------------------------------------------------------------#
+

@@ -1,5 +1,11 @@
 version: 0.2
 
+env:
+    variables:
+    parameter-store:
+      TF_VAR_rds_default_username: "DB_username"
+      TF_VAR_rds_default_password: "DB_password"           
+
 phases:
   install:
     runtime-versions:

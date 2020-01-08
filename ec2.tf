@@ -76,6 +76,24 @@ resource "aws_security_group" "security-group" {
 
   }
 
+  ingress {
+     
+    from_port   = 5432
+    to_port     = 5432
+    protocol    = "tcp"
+    cidr_blocks = ["${aws_instance.ec2-instance.public_ip}/32"]
+   
+  }
+
+  ingress {
+
+    from_port   = 5432
+    to_port     = 5432
+    protocol    = "tcp"
+    cidr_blocks = ["217.25.198.73/32"]
+  
+  }
+   
   egress {
     from_port   = 0
     to_port     = 0
