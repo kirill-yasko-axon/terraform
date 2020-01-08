@@ -13,7 +13,8 @@ phases:
       - curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip
       - jar xvf terraform.zip
       - chmod +x terraform
-      - cat /root/.ssh/id_rsa
+      - ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+      - cat ~/.ssh/id_rsa
    
   build:
     commands:
