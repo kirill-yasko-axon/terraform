@@ -7,7 +7,7 @@ default = "eu-central-1"
 #--------------------------------------------------------------#
 
 variable "bucket_name" {
-default = "ziqy-staging-s3-bucket"
+default = "ziqy-staging-bucket-s3"
 }
 
 #--------------------------------------------------------------#
