@@ -7,7 +7,7 @@ default = "eu-central-1"
 #--------------------------------------------------------------#
 
 variable "bucket_name" {
-default = "ziqy-staging-bucket-s3"
+default = "ziqy-sandbox-bucket-s3"
 }
 
 #--------------------------------------------------------------#
@@ -103,7 +103,7 @@ variable "rds_instance_class" {
 default = "db.t2.micro"
 }
 variable "rds_instance_name" {
-default = "sandbox"
+default = "sandbox-rds"
 }
 variable "rds_default_username" {}
 variable "rds_default_password" {}
