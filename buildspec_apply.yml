@@ -5,9 +5,9 @@ env:
       TF_VAR_rds_default_username: "DB_username"
       TF_VAR_rds_default_password: "DB_password"
 
-artifacts:
-  files:
-    - '**/*'
+cache:
+  paths:
+    - **/*
 
 phases:
   install:
