@@ -103,7 +103,7 @@ variable "rds_instance_class" {
 default = "db.t2.micro"
 }
 variable "rds_instance_name" {
-default = "sandbox-rds"
+default = "sandbox"
 }
 variable "rds_default_username" {}
 variable "rds_default_password" {}
