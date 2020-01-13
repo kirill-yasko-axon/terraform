@@ -12,7 +12,7 @@ resource "aws_db_instance" "sandbox" {
 }
 
 resource "aws_security_group" "rds-sandbox-security-group" {
-  name = "rds-z1qyTEST-security-group"
+  name = "rds-z11qyTEST-security-group"
 
   ingress {
     from_port       = 5432
