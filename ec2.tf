@@ -1,7 +1,3 @@
-resource "aws_key_pair" "ssh-key" {
-  key_name   = var.ssh_key_name
-  public_key = file(var.public_key_path)
-}
 
 resource "aws_instance" "ec2-instance" {
   ami           = var.amazon_machine_image
@@ -50,7 +46,7 @@ resource "aws_eip" "elastic-ip" {
 
 resource "aws_security_group" "security-group" {
   
-  name = "ziqy-security-group"
+  name = "ziqyTEST-security-group"
   vpc_id      = var.vpc_id
  
   dynamic "ingress" {
