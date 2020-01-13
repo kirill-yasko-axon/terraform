@@ -8,6 +8,8 @@ env:
 cache:
   paths:
     - '**/*'
+    - 'build/**/*'
+    - '*.tfstate'
 
 phases:
   install:
