@@ -16,14 +16,10 @@ phases:
       - ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
       - cat ~/.ssh/id_rsa
 
-  pre_build:
-    commands:
-      - aws s3 cp s3://s3-codepipeline-ziqy/ ./ --recursive 
-  
   build:
     commands:
       - ./terraform init
-      - ./terraform plan 
+      - aws s3 cp s3://s3-codepipeline-ziqy/ ./ --recursive 
       - ./terraform apply -auto-approve
 
   post_build:
