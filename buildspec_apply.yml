@@ -16,7 +16,7 @@ phases:
       - ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
       - cat ~/.ssh/id_rsa
 
-  pre-build:
+  pre_build:
     commands:
       - aws s3 cp s3://s3-codepipeline-ziqy/ ./ --recursive 
   
