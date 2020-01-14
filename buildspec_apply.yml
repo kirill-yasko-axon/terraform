@@ -13,22 +13,12 @@ phases:
       - curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip
       - jar xvf terraform.zip
       - chmod +x terraform
-      - ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
-      - cat ~/.ssh/id_rsa
 
   build:
     commands:
       - ./terraform init
       - aws s3 cp s3://s3-codepipeline-ziqy/ ./ --recursive
-      - pwd
-      - ls 
       - ./terraform apply -auto-approve
-
-  post_build:
-    commands:
       - echo Uploading artifact to S3.
       - aws s3 cp terraform.tfstate s3://s3-codepipeline-ziqy/terraform.tfstate
 
-artifacts:
-  files:
-    - terraform.tfstate
