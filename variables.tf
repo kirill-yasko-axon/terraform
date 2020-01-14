@@ -7,7 +7,7 @@ default = "eu-central-1"
 #--------------------------------------------------------------#
 
 variable "bucket_name" {
-default = "ziqy-sandbox--s3"
+default = "ziqy-sandbox-bucket"
 }
 
 #--------------------------------------------------------------#

@@ -22,6 +22,11 @@ phases:
       - ./terraform plan 
       - ./terraform apply -auto-approve
 
-cache:
-    paths:
-        - /root/foo/
+  post_build:
+    commands:
+      - echo Uploading artifact to S3.
+      - aws s3 cp terraform.tfstate s3://ziqy-sandbox-bucket/terraform.tfstate
+
+artifacts:
+  files:
+    - terraform.tfstate
