@@ -25,7 +25,7 @@ phases:
   post_build:
     commands:
       - echo Uploading artifact to S3.
-      - aws s3 cp terraform.tfstate s3://ziqy-sandbox-bucket/terraform.tfstate
+      - aws s3 cp terraform.tfstate s3://s3-codepipeline-ziqy/terraform.tfstate
 
 artifacts:
   files:
