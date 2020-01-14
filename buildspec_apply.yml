@@ -19,7 +19,9 @@ phases:
   build:
     commands:
       - ./terraform init
-      - aws s3 cp s3://s3-codepipeline-ziqy/ ./ --recursive 
+      - aws s3 cp s3://s3-codepipeline-ziqy/ ./ --recursive
+      - pwd
+      - ls 
       - ./terraform apply -auto-approve
 
   post_build:
