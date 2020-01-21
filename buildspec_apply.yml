@@ -10,6 +10,7 @@ phases:
     runtime-versions:
       python: 3.7
     commands:
+      - git --version
       - curl -s -qL -o terraform.zip https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip
       - jar xvf terraform.zip
       - chmod +x terraform
@@ -19,6 +20,5 @@ phases:
       - ./terraform init
       - aws s3 cp s3://s3-codepipeline-ziqy/ ./ --recursive
       - ./terraform apply -auto-approve
-      - echo Uploading artifact to S3.
       - aws s3 cp terraform.tfstate s3://s3-codepipeline-ziqy/terraform.tfstate
 

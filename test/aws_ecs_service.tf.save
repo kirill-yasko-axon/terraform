@@ -1,0 +1,13 @@
+provider "aws" {
+  profile = "default"
+  region  = var.region
+}
+
+resource "aws_elasticsearch_domain" "es" {
+  domain_name           = var.ecs_domain_name
+  elasticsearch_version = var.ecs_version
+  cluster_config_instance_count           = "1"
+  cluster_config_instance_type            = "r5.large.elasticsearch"
+  cluster_config_zone_awareness_enabled   = "true"
+
+}

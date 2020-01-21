@@ -46,7 +46,7 @@ resource "aws_eip" "elastic-ip" {
 
 resource "aws_security_group" "security-group" {
   
-  name = "ziqyTEST-security-group"
+  name = var.ec2-sandbox-security-group
   vpc_id      = var.vpc_id
  
   dynamic "ingress" {
@@ -73,22 +73,67 @@ resource "aws_security_group" "security-group" {
 
   ingress {
      
-    from_port   = 5432
-    to_port     = 5432
+    from_port   = 61616
+    to_port     = 61616
     protocol    = "tcp"
-    cidr_blocks = ["${aws_instance.ec2-instance.public_ip}/32"]
+    cidr_blocks = ["217.25.198.73/32"]
    
   }
 
   ingress {
 
-    from_port   = 5432
-    to_port     = 5432
+    from_port   = 9000
+    to_port     = 9000
+    protocol    = "tcp"
+    cidr_blocks = ["217.25.198.73/32"]
+
+  }
+
+  ingress {
+
+    from_port   = 61613
+    to_port     = 61613
     protocol    = "tcp"
     cidr_blocks = ["217.25.198.73/32"]
   
   }
-   
+ 
+  ingress {
+
+    from_port   = 1883
+    to_port     = 1883
+    protocol    = "tcp"
+    cidr_blocks = ["217.25.198.73/32"]
+
+  }
+  
+  ingress {
+
+    from_port   = 5672
+    to_port     = 5672
+    protocol    = "tcp"
+    cidr_blocks = ["217.25.198.73/32"]
+
+  }
+  
+  ingress {
+
+    from_port   = 61614
+    to_port     = 61614
+    protocol    = "tcp"
+    cidr_blocks = ["217.25.198.73/32"]
+
+  }  
+
+  ingress {
+
+    from_port   = 8161
+    to_port     = 8161
+    protocol    = "tcp"
+    cidr_blocks = ["217.25.198.73/32"]
+
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
